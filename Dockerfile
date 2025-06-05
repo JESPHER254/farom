@@ -7,12 +7,11 @@ RUN apt-get update && apt-get install -y \
     zip \
     && docker-php-ext-install zip
 
-# Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
-RUN composer create-project farmos/farmos .
+# Removed the composer line that caused the error
 
 RUN chown -R www-data:www-data /var/www/html/sites
 
