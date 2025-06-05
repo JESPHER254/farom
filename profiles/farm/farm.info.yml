@@ -2,14 +2,19 @@ name: farmOS
 type: profile
 description: 'A web-based farm record keeping application.'
 core_version_requirement: ^10
-project: farm
-version: 3.x
+package: Distribution
+
+dependencies:
+  - drupal/core
+  - dblog
+
+themes:
+  - claro
+
 distribution:
   name: farmOS
   langcode: en
   exclusive: true
-dependencies:
-  - drupal/core
-  - dblog
-themes:
-  - claro
+
+project: farm
+version: 3.x
