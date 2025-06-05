@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: farmos
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: postgresql://farmdb_gsls_user:eDiOxvXxXNgM2FHw03Kpmbml1bfLZUDH@dpg-d10p7jjipnbc7392k3h0-a/farmdb_gsls
+        fromDatabase:
+          name: farmdb_gsls
+          property: connectionString
